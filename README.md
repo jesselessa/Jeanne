@@ -68,12 +68,12 @@ Confirmation page displaying a thank you message and order reference after a suc
 
 ## Contributing
 
-- If you're interested in contributing, explore the project's structure in the HTML, CSS, and JavaScript files.
+- If you're interested in contributing, explore the project structure in the HTML, CSS, and JavaScript files.
 - Feel free to make improvements, fix bugs, or suggest new features.
 
 ## Stay updated
 
-To stay updated with the latest changes, you can pull the latest changes from the repository : `git pull origin main`
+To stay updated with the latest changes, you can pull them from the repository : `git pull origin main`
 
 ## Contact
 
