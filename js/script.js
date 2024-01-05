@@ -124,8 +124,8 @@ if (coeur) {
   });
 }
 
+// window.addEventListener("DOMContentLoaded", () => {
 // Variables globales pour le slideshow
-const slider = document.querySelector("#slider");
 const slideImage = document.querySelector("#slide");
 const precedentBtn = document.querySelector("#precedent");
 const suivantBtn = document.querySelector("#suivant");
@@ -159,5 +159,9 @@ function changeSlide(sens) {
   slideImage.src = slideImages[currentSlideIndex];
 }
 
-precedentBtn.addEventListener("click", () => changeSlide(-1));
-suivantBtn.addEventListener("click", () => changeSlide(1));
+// Ajout d'une condition pour éviter message d'erreur 'Cannot read properties of null '
+if (precedentBtn && suivantBtn) {
+  precedentBtn.addEventListener("click", () => changeSlide(-1));
+  suivantBtn.addEventListener("click", () => changeSlide(1));
+}
+// });

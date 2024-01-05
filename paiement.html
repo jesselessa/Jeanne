@@ -159,61 +159,73 @@
           vous utilisez pour cet achat.
         </p>
 
-        <form action="" name="">
-          <label class="adf" for="">Adresse de facturation</label>
+        <form>
+          <label class="adf" for="adresse-facturation"
+            >Adresse de facturation</label
+          >
           <input
-            class="nom"
             type="text"
+            class="nom"
             name="nom"
             placeholder="Marie Dupont"
+            autocomplete="on"
           />
           <input
+            type="text"
             class="adresse"
-            type="email"
-            name="email"
+            id="adresse-facturation"
+            name="adresse-facturation"
             placeholder="1 rue du Paradis, 75000 Paris, FRANCE"
+            autocomplete="on"
           />
           <input
-            class="mail"
             type="email"
+            class="email"
             name="email"
             placeholder="exemple@domaine.com"
+            autocomplete="on"
           />
           <input
+            type="tel"
             class="telephone"
-            type="email"
-            name="email"
+            name="telephone"
             placeholder="+33750000000"
+            autocomplete="on"
           />
           <div class="btn-form">
-            <input class="envoi" type="submit" value="Modifier" />
-            <input class="envoi" type="submit" value="Supprimer" />
+            <button>Modifier</button>
+            <button>Supprimer</button>
           </div>
         </form>
 
-        <form action="" name="">
-          <label for="">Adresse de livraison</label>
+        <form>
+          <label for="adresse-livraison">Adresse de livraison</label>
           <input
             class="nom"
+            id="nom"
             type="text"
             name="nom"
             placeholder="Marie Dupont"
+            autocomplete="on"
           />
           <input
+            type="text"
             class="adresse"
-            type="email"
-            name="email"
+            id="adresse-livraison"
+            name="adresse-livraison"
             placeholder="1 rue du Paradis, 75000 Paris, FRANCE"
+            autocomplete="on"
           />
           <input
+            type="tel"
             class="telephone"
-            type="email"
-            name="email"
+            name="telephone"
             placeholder="+33750000000"
+            autocomplete="on"
           />
           <div class="btn-form">
-            <input class="envoi" type="submit" value="Modifier" />
-            <input class="envoi" type="submit" value="Supprimer" />
+            <button>Modifier</button>
+            <button>Supprimer</button>
           </div>
         </form>
       </section>
@@ -249,10 +261,10 @@
           <h3>Informations sur le paiement</h3>
 
           <!---------- Box paiement----------->
-          <div class="box-cb">
+          <form class="box-cb" action="confirmation.html">
             <div class="cards">
               <a href="#"
-                ><img class="paypal" src="./images/paypal-img.png" alt=""
+                ><img class="paypal" src="./images/paypal-img.png" alt="paypal"
               /></a>
               <img
                 class="all-cards-img"
@@ -261,41 +273,60 @@
               />
             </div>
 
-            <br />
-
             <div class="card-holder">
-              Titulaire de la carte :<br />
-              <input type="text" placeholder="Nom et prénom du titulaire" />
+              <label for="cb-holder">Titulaire de la carte&nbsp;:</label>
+              <input
+                type="text"
+                id="cb-holder"
+                name="cb-holder"
+                placeholder="Nom et prénom du titulaire"
+              />
             </div>
 
             <div class="card-number">
-              Numéro de carte :<br />
-              <input class="firstfour" placeholder="1111" maxlength="4" />
-              <input placeholder="2222" maxlength="4" />
-              <input placeholder="3333" maxlength="4" />
-              <input placeholder="4444" maxlength="4" />
+              <label for="card-number">Numéro de carte&nbsp;:</label>
+              <br />
+              <input
+                type="number"
+                id="card-number"
+                name="card-expiration"
+                placeholder="1111 2222 3333 4444"
+                maxlength="19"
+              />
             </div>
 
             <div class="card-expiration">
-              Date d'expiration :<br />
-              <input class="month" placeholder="MM" maxlength="2" /> /
-              <input class="year" placeholder="AA" maxlength="4" />
+              <label for="card-expiration">Date d'expiration&nbsp;:</label>
+              <input
+                id="card-expiration"
+                name="card-expiration"
+                placeholder="MM/AAAA"
+                maxlength="7"
+              />
             </div>
 
             <div class="card-security">
-              Cryptogramme :<br />
-              <input class="security" placeholder="CVV" maxlength="3" />
-              <small
-                ><span class="tooltip">Où le trouver?</span
+              <label for="security">Cryptogramme&nbsp;:</label>&nbsp;
+              <input
+                type="number"
+                id="security"
+                name="security"
+                placeholder="CVV"
+                maxlength="3"
+                autocomplete="off"
+              />
+              <br />
+              <span class="small"
+                ><span class="tooltip">Où le trouver&nbsp;?</span
                 ><span class="help"
                   >Le cryptogramme à 3 chiffres se trouve au verso de votre
                   carte, à droite de la zone de signature</span
-                ></small
-              >
+                >
+              </span>
             </div>
 
-            <a class="pay" href="confirmation.html">PAYER MAINTENANT</a>
-          </div>
+            <button type="submit" class="pay">PAYER MAINTENANT</button>
+          </form>
         </div>
       </section>
     </main>
