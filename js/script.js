@@ -159,7 +159,5 @@ function changeSlide(sens) {
   slideImage.src = slideImages[currentSlideIndex];
 }
 
-// Écouteurs d'événements pour les boutons précédent et suivant
 precedentBtn.addEventListener("click", () => changeSlide(-1));
-
 suivantBtn.addEventListener("click", () => changeSlide(1));
