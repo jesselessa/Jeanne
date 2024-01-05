@@ -21,7 +21,7 @@ Welcome to Jeanne Paris, a website for a fictive brand showcasing a collection o
 
 ## Website
 
-You can view Jeanne Paris website [here](https://jesselessa.github.io/jeanne/)
+You can view the website [here](https://jesselessa.github.io/jeanne/)
 
 ## Stack
 
@@ -49,15 +49,15 @@ Detailed view of a specific clothing item, including images, description, pricin
 
 ### 4. Shopping Cart (panier.html)
 
-Shopping cart page where users can review selected items, see the total cost, and proceed to checkout.
+Page where a user can review his selected items, see the total cost, and proceed to checkout.
 
 ### 5. Payment (paiement.html)
 
-Payment page where users can find their order summary and fill out their information before making payment.
+Page where a user can find his order summary and fill out his information before making payment.
 
 ### 6. Order Confirmation (confirmation.html)
 
-Confirmation page displaying a thank you message and order reference after a successful purchase.
+Page displaying a thank you message and order reference after a successful purchase.
 
 ## Run the project locally
 
