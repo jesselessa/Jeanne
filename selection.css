@@ -102,14 +102,14 @@ a {
 #coeur {
   width: 27px;
   height: 25px;
-  background: url("./images/sélection/coeur\ favori\ 1.png") no-repeat
+  background: url("./images/selection/coeur\ favori\ 1.png") no-repeat
     center/cover;
 }
 
 #coeur.active {
   width: 28px;
   height: 25px;
-  background: url("./images/sélection/coeur\ favori\ 2.png") no-repeat
+  background: url("./images/selection/coeur\ favori\ 2.png") no-repeat
     center/cover;
 }
 
@@ -263,15 +263,15 @@ h2 {
 }
 
 .boucles {
-  background: url("./images/sélection/boucles.png") no-repeat center/cover;
+  background: url("./images/selection/boucles.png") no-repeat center/cover;
 }
 
 .chaussures {
-  background: url("./images/sélection/chaussures.png") no-repeat center/cover;
+  background: url("./images/selection/chaussures.png") no-repeat center/cover;
 }
 
 .bague {
-  background: url("./images/sélection/bague.png") no-repeat center/cover;
+  background: url("./images/selection/bague.png") no-repeat center/cover;
 }
 
 .hover {
