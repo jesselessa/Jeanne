@@ -1,141 +1,7 @@
-// // Menu
-// function showMenu() {
-//   const menu = document.querySelector("#topnav_menu");
-//   const icon = document.querySelector("#topnav_icon");
-
-//   if (menu.className === "") {
-//     menu.className = "open";
-//     icon.className = "open";
-//   } else {
-//     menu.className = "";
-//     icon.className = "";
-//   }
-// }
-
-// // Chaussures
-// const chaussures = document.querySelector("#chaussures");
-// const listeChaussures = document.querySelector("#listeChaussures");
-
-// chaussures.addEventListener("click", () => {
-//   listeChaussures.classList.toggle("open");
-// });
-
-// //  Sacs
-// const sacs = document.querySelector("#sacs");
-// const listeSacs = document.querySelector("#listeSacs");
-
-// sacs.addEventListener("click", () => {
-//   listeSacs.classList.toggle("open");
-// });
-
-// // Robes
-// const robes = document.querySelector("#robes");
-// const listeRobes = document.querySelector("#listeRobes");
-
-// robes.addEventListener("click", () => {
-//   listeRobes.classList.toggle("open");
-// });
-
-// // Bijoux
-// const bijoux = document.querySelector("#bijoux");
-// const listeBijoux = document.querySelector("#listeBijoux");
-
-// bijoux.addEventListener("click", () => {
-//   listeBijoux.classList.toggle("open");
-// });
-
-// // Burger croix
-// const burger = document.querySelector("#burger");
-
-// burger.addEventListener("click", () => {
-//   burger.classList.toggle("active");
-// });
-
-// // Menu responsive
-// const menu = document.querySelector("#topnav_menu");
-// const icon = document.querySelector("#topnav_icon");
-
-// burger.addEventListener("click", () => {
-//   menu.classList.toggle("open");
-// });
-
-// // GSAP
-// const logo = document.querySelector(".LOGO");
-// const vit = document.querySelector(".vit");
-// const anim = document.querySelectorAll(".anim");
-
-// window.addEventListener("DOMContentLoaded", () => {
-//   // Used "DOMContentLoaded" instead of event "load" to prevent warning messages
-//   const TL = gsap.timeline({ paused: true });
-
-//   TL.staggerFrom(vit, 1, { top: -100, ease: "power2.out" }, 0.3);
-//   TL.staggerFrom(
-//     logo,
-//     1,
-//     { top: -50, opacity: 0, ease: "power2.out" },
-//     0.3,
-//     "-=0.8"
-//   );
-//   TL.staggerFrom(anim, 3, { opacity: 0, ease: "power2.out" }, 0.3, "-=0.2");
-
-//   TL.play();
-// });
-
-// // Intersection Observer API
-// let observer = new IntersectionObserver(
-//   function (observables) {
-//     observables.forEach(function (observable) {
-//       // L'élément devient visible
-//       if (observable.intersectionRatio > 0.5) {
-//         observable.target.classList.remove("not-visible");
-//         observer.unobserve(observable.target);
-//       }
-//     });
-//   },
-//   {
-//     threshold: [0.5],
-//   }
-// );
-
-// // On observe nos éléments
-// let items = document.querySelectorAll(".yeah");
-// items.forEach(function (item) {
-//   item.classList.add("not-visible");
-//   observer.observe(item);
-// });
-
-// // Bouton coeur page vêtement
-// const coeur = document.querySelector("#coeur");
-// if (coeur) {
-//   // Add "if" statement to remove error message in console "Cannot read property 'addEventListener' of null"
-//   coeur.addEventListener("click", () => {
-//     coeur.classList.toggle("active");
-//   });
-// }
-
-// // Slideshow vêtement sélectionné
-// const slide = new Array(
-//   "./images/sélection/responsive/vue1-1000px.jpg",
-//   "./images/sélection/responsive/vue2-1000px.jpg",
-//   "./images/sélection/responsive/vue3-1000px.jpg",
-//   "./images/sélection/responsive/vue4-1000px.jpg"
-// );
-
-// let numero = 0;
-
-// function ChangeSlide(sens) {
-//   numero = numero + sens;
-//   if (numero < 0) numero = slide.length - 1;
-//   if (numero > slide.length - 1) numero = 0;
-//   document.querySelector("#slide").src = slide[numero];
-// }
-
 // Fonction pour basculer la visibilité du menu et de l'icône
 function toggleMenuAndIcon(menu, icon) {
-  if (menu && icon) {
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-  }
+  menu.classList.toggle("open");
+  icon.classList.toggle("open");
 }
 
 // Fonction pour gérer les éléments cliquables
@@ -147,8 +13,13 @@ function toggleElement(element, target) {
 
 // Fonction pour créer une timeline GSAP
 function createGSAPTimeline(logo, vit, anim) {
+  // Création d'une timeline GSAP avec pause initiale
   const TL = gsap.timeline({ paused: true });
+
+  // Animation de défilement depuis le haut pour les éléments 'vit'
   TL.staggerFrom(vit, 1, { top: -100, ease: "power2.out" }, 0.3);
+
+  // Animation de défilement depuis le haut pour les éléments 'vit'
   TL.staggerFrom(
     logo,
     1,
@@ -156,25 +27,24 @@ function createGSAPTimeline(logo, vit, anim) {
     0.3,
     "-=0.8"
   );
+
+  // Animation de fondu pour les éléments 'anim' avec un délai
   TL.staggerFrom(anim, 3, { opacity: 0, ease: "power2.out" }, 0.3, "-=0.2");
+
+  // Lecture automatique de la timeline
   TL.play();
 }
 
 // Fonction pour observer les éléments avec Intersection Observer API
 function observeElements(observer, items) {
+  // Pour chaque élément à observer
   items.forEach((item) => {
+    // Ajout de la classe 'not-visible' pour masquer l'élément initialement
     item.classList.add("not-visible");
+
+    // Observation de l'élément par l'observateur Intersection Observer
     observer.observe(item);
   });
-}
-
-// Fonction pour changer le slide du slideshow
-function changeSlide(slide, numero, sens) {
-  numero = numero + sens;
-  if (numero < 0) numero = slide.length - 1;
-  if (numero > slide.length - 1) numero = 0;
-  document.querySelector("#slide").src = slide[numero];
-  return numero;
 }
 
 // Toggle menu et icône lors du clic sur le burger
@@ -227,21 +97,26 @@ window.addEventListener("DOMContentLoaded", () =>
 // Intersection Observer API
 let observer = new IntersectionObserver(
   (observables) => {
+    // La fonction de rappel est appelée chaque fois que les éléments observés changent d'état
     observables.forEach((observable) => {
+      // Vérifie si la portion visible de l'élément est supérieure à 50%
       if (observable.intersectionRatio > 0.5) {
+        // Si plus de 50% de l'élément est visible, retire la classe 'not-visible'
         observable.target.classList.remove("not-visible");
+
+        // Cesse d'observer cet élément pour éviter des actions répétées
         observer.unobserve(observable.target);
       }
     });
   },
-  { threshold: [0.5] }
+  { threshold: [0.5] } // Définit le seuil d'intersection à 50%
 );
 
 // Observer les éléments
 let items = document.querySelectorAll(".yeah");
 observeElements(observer, items);
 
-// Bouton coeur page Vêtement
+// Bouton coeur page Sélection
 const coeur = document.querySelector("#coeur");
 if (coeur) {
   coeur.addEventListener("click", () => {
@@ -249,16 +124,42 @@ if (coeur) {
   });
 }
 
-// Slideshow page Sélection
-const slide = [
+// Variables globales pour le slideshow
+const slider = document.querySelector("#slider");
+const slideImage = document.querySelector("#slide");
+const precedentBtn = document.querySelector("#precedent");
+const suivantBtn = document.querySelector("#suivant");
+
+// Tableau contenant les chemins des différentes images du slide
+const slideImages = [
   "./images/selection/responsive/vue1-1000px.jpg",
   "./images/selection/responsive/vue2-1000px.jpg",
   "./images/selection/responsive/vue3-1000px.jpg",
   "./images/selection/responsive/vue4-1000px.jpg",
 ];
-let numero = 0;
 
-// Changement de slide
-function ChangeSlide(sens) {
-  numero = changeSlide(slide, numero, sens);
+// Variable stockant l'index actuel du slide
+let currentSlideIndex = 0;
+
+// Fonction pour changer le slide
+function changeSlide(sens) {
+  currentSlideIndex += sens;
+
+  // Boucle vers le dernier slide si on va au-delà du premier
+  if (currentSlideIndex < 0) {
+    currentSlideIndex = slideImages.length - 1;
+  }
+
+  // Boucle vers le premier slide si on va au-delà du dernier
+  if (currentSlideIndex >= slideImages.length) {
+    currentSlideIndex = 0;
+  }
+
+  // Met à jour l'attribut source de l'élément 'slide' avec la nouvelle image
+  slideImage.src = slideImages[currentSlideIndex];
 }
+
+// Écouteurs d'événements pour les boutons précédent et suivant
+precedentBtn.addEventListener("click", () => changeSlide(-1));
+
+suivantBtn.addEventListener("click", () => changeSlide(1));
