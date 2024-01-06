@@ -1,15 +1,76 @@
-// Fonction pour basculer la visibilité du menu et de l'icône
-function toggleMenuAndIcon(menu, icon) {
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
+// Gérer l'affichage du menu avec l'icône ou le burger
+const icon = document.querySelector("#topnav_icon");
+const menu = document.querySelector("#topnav_menu");
+const burger = document.querySelector("#burger");
+
+icon.addEventListener("mouseover", () => {
+  icon.classList.add("open");
+  menu.classList.add("open");
+
+  menu.addEventListener("mouseleave", handleMouseLeave);
+});
+
+function handleMouseLeave() {
+  // Vérifier si le menu et l'icône ont la classe 'open'
+  if (icon.classList.contains("open") && menu.classList.contains("open")) {
+    icon.classList.remove("open");
+    menu.classList.remove("open");
+
+    // Retirer le gestionnaire d'événement après avoir effectué l'action
+    menu.removeEventListener("mouseleave", handleMouseLeave);
+  }
 }
 
-// Fonction pour gérer les éléments cliquables
+// Toggle de la classe 'active' pour le burger
+burger.addEventListener("click", () => {
+  if (!burger.classList.contains("active")) {
+    burger.classList.add("active");
+    menu.classList.add("open");
+  } else {
+    burger.classList.remove("active");
+    menu.classList.remove("open");
+  }
+});
+
+// Fonction pour gérer les éléments cliquables du menu
 function toggleElement(element, target) {
   element.addEventListener("click", () => {
-    target.classList.toggle("open");
+    if (!target.classList.contains("open")) {
+      target.classList.add("open");
+    } else {
+      target.classList.remove("open");
+    }
   });
 }
+
+const elements = [
+  {
+    element: document.querySelector("#chaussures"),
+    target: document.querySelector("#listeChaussures"),
+  },
+  {
+    element: document.querySelector("#sacs"),
+    target: document.querySelector("#listeSacs"),
+  },
+  {
+    element: document.querySelector("#robes"),
+    target: document.querySelector("#listeRobes"),
+  },
+  {
+    element: document.querySelector("#bijoux"),
+    target: document.querySelector("#listeBijoux"),
+  },
+];
+
+elements.forEach((item) => toggleElement(item.element, item.target));
+
+// Variables globales GSAP
+const logo = document.querySelector(".LOGO");
+const vit = document.querySelector(".vit");
+const anim = document.querySelectorAll(".anim");
+window.addEventListener("DOMContentLoaded", () =>
+  createGSAPTimeline(logo, vit, anim)
+);
 
 // Fonction pour créer une timeline GSAP
 function createGSAPTimeline(logo, vit, anim) {
@@ -35,68 +96,6 @@ function createGSAPTimeline(logo, vit, anim) {
   TL.play();
 }
 
-// Fonction pour observer les éléments avec Intersection Observer API
-function observeElements(observer, items) {
-  // Pour chaque élément à observer
-  items.forEach((item) => {
-    // Ajout de la classe 'not-visible' pour masquer l'élément initialement
-    item.classList.add("not-visible");
-
-    // Observation de l'élément par l'observateur Intersection Observer
-    observer.observe(item);
-  });
-}
-
-// Toggle menu et icône lors du clic sur le burger
-const icon = document.querySelector("#topnav_icon");
-const menu = document.querySelector("#topnav_menu");
-const burger = document.querySelector("#burger");
-
-// toggleElement(burger, menu);
-toggleElement(menu, icon);
-toggleElement(menu, burger);
-
-// Faire apparaître/disparaître menu en cliquant sur l'icône
-icon.addEventListener("mouseover", () => toggleMenuAndIcon(menu, icon));
-// icon.addEventListener("mouseleave", () => toggleMenuAndIcon(menu, icon));
-
-menu.addEventListener("mouseleave", () => toggleMenuAndIcon(menu, icon));
-
-// burger.addEventListener("click", () => {
-//   burger.classList.toggle("active");
-//   toggleMenuAndIcon(menu, icon);
-// });
-
-// Gérer les éléments cliquables
-const elements = [
-  {
-    element: document.querySelector("#chaussures"),
-    target: document.querySelector("#listeChaussures"),
-  },
-  {
-    element: document.querySelector("#sacs"),
-    target: document.querySelector("#listeSacs"),
-  },
-  {
-    element: document.querySelector("#robes"),
-    target: document.querySelector("#listeRobes"),
-  },
-  {
-    element: document.querySelector("#bijoux"),
-    target: document.querySelector("#listeBijoux"),
-  },
-];
-
-elements.forEach((item) => toggleElement(item.element, item.target));
-
-// GSAP
-const logo = document.querySelector(".LOGO");
-const vit = document.querySelector(".vit");
-const anim = document.querySelectorAll(".anim");
-window.addEventListener("DOMContentLoaded", () =>
-  createGSAPTimeline(logo, vit, anim)
-);
-
 // Intersection Observer API
 let observer = new IntersectionObserver(
   (observables) => {
@@ -118,6 +117,18 @@ let observer = new IntersectionObserver(
 // Observer les éléments
 let items = document.querySelectorAll(".yeah");
 observeElements(observer, items);
+
+// Fonction pour observer les éléments avec Intersection Observer API
+function observeElements(observer, items) {
+  // Pour chaque élément à observer
+  items.forEach((item) => {
+    // Ajout de la classe 'not-visible' pour masquer l'élément initialement
+    item.classList.add("not-visible");
+
+    // Observation de l'élément par l'observateur Intersection Observer
+    observer.observe(item);
+  });
+}
 
 // Bouton coeur page Sélection
 const coeur = document.querySelector("#coeur");

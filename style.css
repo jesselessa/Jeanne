@@ -1,12 +1,16 @@
+@font-face {
+  font-family: "Caslon";
+  src: url(./fonts/Libre_Caslon_Text/LibreCaslonText-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-@font-face {
+body {
   font-family: "Caslon", serif;
-  src: url(./fonts/Libre_Caslon_Text/LibreCaslonText-Regular.ttf);
 }
 
 a {
@@ -123,7 +127,7 @@ header form input {
   top: 90px;
   margin: 0;
   width: 800px;
-  height: 100vh;
+  /* height: 100vh; */
   z-index: 99;
   transform-origin: 0% 0%;
   transform: translate(-200%, 0);
@@ -144,12 +148,12 @@ header form input {
   margin: 0;
   left: 0;
   top: 0;
-  width: 100%;
   padding: 30px 50px;
   text-align: left;
   background: rgba(255, 255, 255, 0.85);
   list-style-type: none;
   gap: 10px;
+  overflow-y: auto;
 }
 
 #topnav_menu ul {
@@ -163,8 +167,9 @@ header form input {
   font-size: 20px;
 }
 
-#topnav_menu ul li {
-  font-size: 16px;
+#topnav_menu .grande-categorie li a {
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 #topnav_menu a {
@@ -178,6 +183,7 @@ header form input {
 }
 
 #topnav_icon {
+  margin-bottom: 10px;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -254,7 +260,7 @@ header form input {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 766px) {
   header .picto a img {
     height: 30px;
     margin: 8px;
@@ -265,6 +271,8 @@ header form input {
   #topnav_menu .grande-categorie {
     grid-template-columns: 1fr;
     grid-template-rows: repeat (4, auto);
+    width: 100%;
+    padding: 10px;
   }
   #topnav_menu ul li {
     line-height: 5px;

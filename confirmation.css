@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Caslon";
+  src: url(./fonts/Libre_Caslon_Text/LibreCaslonText-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +10,7 @@
 }
 
 body {
-  font-family: "Caslon";
-}
-
-@font-face {
-  font-family: "Caslon";
-  src: url(./fonts/Libre_Caslon_Text/LibreCaslonText-Regular.ttf);
+  font-family: "Caslon", serif;
 }
 
 .thx {
