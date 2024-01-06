@@ -678,6 +678,9 @@ footer a {
 }
 
 @media screen and (max-width: 500px) {
+  .s2 h3 {
+    text-align: center;
+  }
   .box-cb label {
     font-size: 16px;
   }

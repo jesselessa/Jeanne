@@ -28,15 +28,11 @@ body {
 }
 
 /* -------------------- S1 ------------------- */
+.s1 {
+  max-width: 50vw;
+}
 .s1 .haut h1 {
   font-size: 25px;
-}
-
-.h2 h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
 }
 
 .haut {
@@ -67,12 +63,19 @@ li {
 
 .div1 {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
   font-size: 20px;
   padding: 20px;
-  gap: 40px;
-  width: 100%;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.6;
 }
 
 .contenu h2 {
@@ -82,10 +85,6 @@ li {
   color: #b17f4a;
 }
 
-.contenu {
-  line-height: 1.6;
-}
-
 .s1 {
   display: flex;
   flex-direction: column;
@@ -93,22 +92,9 @@ li {
   min-height: 87vh;
 }
 
-.bas {
-  height: 52px;
-  margin: 0px;
-  background: #efbb7e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: #efbb7e;
-}
-
-.bas p {
-  padding: 10px;
-}
-
 /* ------------------- S2 ------------------- */
 .s2 {
+  max-width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -143,10 +129,10 @@ li {
 }
 
 form {
-  height: 40px;
+  min-height: 40px;
   display: flex;
   justify-content: space-between;
-  margin: 10px;
+  margin: 20px;
 }
 
 input {
@@ -177,12 +163,17 @@ input {
   background: #efbb7e;
 }
 
+.btn-2 {
+  padding: 5px 10px;
+}
+
 .btn:hover,
 .btn-1:hover,
 .btn-2:hover {
   cursor: pointer;
   box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.25);
 }
+
 .paye2 {
   height: auto;
   margin-bottom: 20px;
@@ -216,7 +207,7 @@ input {
   background-color: #efbb7e;
   padding: 5px 30px;
   border: none;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
@@ -229,80 +220,62 @@ input {
   align-self: center;
 }
 
-.footer {
-  background: #efbb7e;
+.bas {
+  min-height: 12vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #efbb7e;
   border: #efbb7e;
-  min-height: 52px;
-}
-
-.footer p {
   padding: 10px;
 }
 
 /************* Media Queries ****************/
-@media screen and (max-width: 609px) {
+@media screen and (max-width: 1000px) {
   .containerGrand {
-    display: grid;
     grid-template-columns: 1fr;
-    text-align: center;
+  }
+  .s1,
+  .s2 {
+    max-width: 100vw;
+  }
+  .s1 {
+    margin-bottom: 30px;
+  }
+  .s2 {
+    border-left: none;
   }
   .div1 {
     flex-direction: column;
     align-items: center;
   }
-  .div1 img {
-    object-fit: contain;
+  .contenu {
+    width: 100vw;
   }
-  .s1 .haut h1 {
-    font-size: 20px;
-  }
-  .s1 .haut p {
-    font-size: 15px;
-  }
-  .s1 .div1 img {
-    min-height: 250px;
-    width: 200px;
-  }
-  .s2 h1 {
-    font-size: 20px;
-  }
-  .cb {
-    margin-bottom: 20px;
-  }
-
   .contenu h2 {
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
+    text-align: center;
   }
-  .h2 h2 {
-    font-size: 15px;
+  .contenu h2,
+  .contenu ul {
+    width: 100%;
   }
   .livraison {
-    font-size: 15px;
+    padding: 10px;
   }
-  .bas,
-  .footer {
-    font-size: 18px;
+  form {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
-  .bas {
+  .btn-2 {
     margin-bottom: 30px;
-    background-color: #ffdbb0;
-  }
-  .paye1 {
-    margin-top: 10px;
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .containerGrand {
-    grid-template-columns: 1fr;
-  }
-  .s2 {
-    border-left: none;
+@media screen and (max-width: 500px) {
+  input {
+    width: 80%;
   }
 }
 

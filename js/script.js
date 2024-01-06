@@ -50,19 +50,22 @@ function observeElements(observer, items) {
 // Toggle menu et icône lors du clic sur le burger
 const icon = document.querySelector("#topnav_icon");
 const menu = document.querySelector("#topnav_menu");
-const menuList = document.querySelector("#topnav_menu .grande-categorie");
 const burger = document.querySelector("#burger");
 
-toggleElement(burger, menu);
-toggleElement(burger, icon);
+// toggleElement(burger, menu);
+toggleElement(menu, icon);
+toggleElement(menu, burger);
 
+// Faire apparaître/disparaître menu en cliquant sur l'icône
 icon.addEventListener("mouseover", () => toggleMenuAndIcon(menu, icon));
-menuList.addEventListener("mouseleave", () => toggleMenuAndIcon(menu, icon));
+// icon.addEventListener("mouseleave", () => toggleMenuAndIcon(menu, icon));
 
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active");
-  toggleMenuAndIcon(menu, icon);
-});
+menu.addEventListener("mouseleave", () => toggleMenuAndIcon(menu, icon));
+
+// burger.addEventListener("click", () => {
+//   burger.classList.toggle("active");
+//   toggleMenuAndIcon(menu, icon);
+// });
 
 // Gérer les éléments cliquables
 const elements = [
@@ -124,7 +127,6 @@ if (coeur) {
   });
 }
 
-// window.addEventListener("DOMContentLoaded", () => {
 // Variables globales pour le slideshow
 const slideImage = document.querySelector("#slide");
 const precedentBtn = document.querySelector("#precedent");
@@ -164,4 +166,3 @@ if (precedentBtn && suivantBtn) {
   precedentBtn.addEventListener("click", () => changeSlide(-1));
   suivantBtn.addEventListener("click", () => changeSlide(1));
 }
-// });
