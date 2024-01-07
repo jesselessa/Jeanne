@@ -436,6 +436,7 @@ label {
 .btn-form button {
   width: 130px;
   height: 40px;
+  font-size: 18px;
   font-weight: bold;
   font-family: "Caslon";
   background: #efbb7e;
@@ -596,6 +597,7 @@ small {
   display: inline-block;
   width: 60%;
   background: #efbb7e;
+  font-size: 20px;
   font-family: "Caslon";
   font-weight: bold;
   color: black;
@@ -658,6 +660,16 @@ small {
 }
 
 @media screen and (max-width: 500px) {
+  .btn-form {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 30px 0;
+  }
+  .btn-form button {
+    width: 60vw;
+    color: black;
+    margin-bottom: 15px;
+  }
   .s2 h3 {
     text-align: center;
   }
