@@ -1,7 +1,3 @@
-* {
-  box-shadow: 0 0 0 4px red inset;
-}
-
 @font-face {
   font-family: "Caslon";
   src: url(./fonts/Libre_Caslon_Text/LibreCaslonText-Regular.ttf);
@@ -28,7 +24,6 @@ a {
 }
 
 main,
-section,
 header,
 footer {
   max-width: 100%;
@@ -333,9 +328,12 @@ footer a {
 }
 
 /*------ DEBUT DE LA PAGE D'ACCUEIL ------*/
-main {
+/* main {
   display: flex;
   flex-direction: column;
+} */
+main h2 {
+  font-size: clamp(30px, 4vw, 40px);
 }
 
 .flex {
@@ -350,10 +348,6 @@ main {
   align-items: center;
 }
 
-main h2 {
-  font-size: clamp(30px, 4vw, 40px);
-}
-
 /* !-----------  VITRINE ------------- */
 #vitrine img {
   width: 100%;
@@ -364,25 +358,21 @@ main h2 {
   display: none;
 }
 
-/* API */
-.yeah {
-  transform: translateX(0);
-  opacity: 1;
-  transition: opacity 2s;
-}
-.yeah.not-visible {
-  transform: translateX(50px);
-  opacity: 0;
+/* !-------- NOUVEAUTES --------- */
+#nouveautes a {
+  display: block;
 }
 
-/* !-------- NOUVEAUTES --------- */
-#nouveautes img,
-#nouveautes a {
-  margin: 30px;
+#nouveautes img {
+  width: 100%;
+  height: 100%;
+  margin: 20px 0;
+  box-shadow: 0px 4px 10px #b17f4a;
 }
 
 #nouveautes h2 {
   color: black;
+  text-align: center;
 }
 
 #nouveautes h2:hover {
@@ -398,8 +388,9 @@ main h2 {
 
 #grande-cat div {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #grande-cat .bijoux {
@@ -421,26 +412,28 @@ main h2 {
 #grande-cat h2 {
   color: white;
   text-shadow: 8px 8px 4px rgba(0, 0, 0, 0.25);
-  padding: 80px 60px;
+  padding: 80px;
 }
 
 #grande-cat h2:hover {
-  font-size: clamp(32px, 4vw, 42px);
+  transform: scale(1.05);
 }
 
 /* !--------- INTEMPORELS ---------- */
-#intemporels img,
 #intemporels a {
-  margin: 30px;
+  display: block;
 }
 
-#intemporels img,
-#nouveautes img {
+#intemporels img {
   box-shadow: 0px 4px 10px #b17f4a;
+  margin: 20px 0;
+  width: 100%;
+  height: 100%;
 }
 
 #intemporels h2 {
   color: black;
+  text-align: center;
 }
 
 #intemporels h2:hover {
@@ -456,8 +449,9 @@ main h2 {
 
 #petite-cat div {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #petite-cat .robes-blanches {
@@ -483,18 +477,10 @@ main h2 {
 }
 
 #petite-cat h2:hover {
-  font-size: clamp(32px, 4vw, 42px);
+  transform: scale(1.05);
 }
 
 /* !--------- ENGAGEMENTS ----------- */
-#engagements a {
-  color: black;
-}
-
-#engagements a:hover {
-  color: gray;
-}
-
 #engagements {
   display: flex;
   flex-direction: column;
@@ -503,13 +489,21 @@ main h2 {
   gap: 50px;
 }
 
+#engagements a {
+  color: black;
+}
+
+#engagements a:hover {
+  color: gray;
+}
+
 #engagements .flex {
   flex-wrap: wrap;
   gap: 10px;
 }
 
 #engagements .icon a {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -522,6 +516,11 @@ main h2 {
 #engagements h1 {
   text-transform: uppercase;
   color: #b17f4a;
+}
+
+#engagements h1,
+#engagements p {
+  text-align: center;
 }
 
 /* !----- RESPONSIVE - PAGE ACCUEIL -------  */
@@ -635,31 +634,10 @@ main h2 {
   .reverse {
     flex-direction: column-reverse;
   }
-  #intemporels img,
-  #intemporels a {
-    width: 95%;
-    margin: 10px auto;
-  }
-  #nouveautes img,
-  #nouveautes a {
-    width: 95%;
-    margin: 10px auto;
-  }
-  #intemporels h2,
-  #nouveautes h2 {
-    margin-bottom: 20px;
-  }
-  #intemporels h2:hover {
-    text-shadow: 0px 4px 4px rgba(68, 68, 68, 0.25);
-  }
-  #nouveautes h2:hover {
-    text-shadow: 0px 4px 4px rgba(68, 68, 68, 0.25);
-  }
-  #intemporels h2:active {
-    text-shadow: 0px 4px 4px rgba(68, 68, 68, 0.25);
-  }
-  #nouveautes h2:active {
-    text-shadow: 0px 4px 4px rgba(68, 68, 68, 0.25);
+
+  #nouveautes h2,
+  #intemporels h2 {
+    margin: 20px 0;
   }
   #engagements .vs-mob {
     width: 50%;

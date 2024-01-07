@@ -96,40 +96,6 @@ function createGSAPTimeline(logo, vit, anim) {
   TL.play();
 }
 
-// Intersection Observer API
-let observer = new IntersectionObserver(
-  (observables) => {
-    // La fonction de rappel est appelée chaque fois que les éléments observés changent d'état
-    observables.forEach((observable) => {
-      // Vérifie si la portion visible de l'élément est supérieure à 50%
-      if (observable.intersectionRatio > 0.5) {
-        // Si plus de 50% de l'élément est visible, retire la classe 'not-visible'
-        observable.target.classList.remove("not-visible");
-
-        // Cesse d'observer cet élément pour éviter des actions répétées
-        observer.unobserve(observable.target);
-      }
-    });
-  },
-  { threshold: [0.5] } // Définit le seuil d'intersection à 50%
-);
-
-// Observer les éléments
-let items = document.querySelectorAll(".yeah");
-observeElements(observer, items);
-
-// Fonction pour observer les éléments avec Intersection Observer API
-function observeElements(observer, items) {
-  // Pour chaque élément à observer
-  items.forEach((item) => {
-    // Ajout de la classe 'not-visible' pour masquer l'élément initialement
-    item.classList.add("not-visible");
-
-    // Observation de l'élément par l'observateur Intersection Observer
-    observer.observe(item);
-  });
-}
-
 // Bouton coeur page Sélection
 const coeur = document.querySelector("#coeur");
 if (coeur) {
