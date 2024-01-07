@@ -1,3 +1,9 @@
+// Améliorer le chargement de mes images en activant le chargement paresseux
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll("img");
+  images.forEach((image) => image.setAttribute("loading", "lazy"));
+});
+
 // Gérer l'affichage du menu avec l'icône ou le burger
 const icon = document.querySelector("#topnav_icon");
 const menu = document.querySelector("#topnav_menu");
@@ -10,38 +16,26 @@ icon.addEventListener("mouseover", () => {
   menu.addEventListener("mouseleave", handleMouseLeave);
 });
 
-function handleMouseLeave() {
-  // Vérifier si le menu et l'icône ont la classe 'open'
+const handleMouseLeave = () => {
   if (icon.classList.contains("open") && menu.classList.contains("open")) {
     icon.classList.remove("open");
     menu.classList.remove("open");
-
-    // Retirer le gestionnaire d'événement après avoir effectué l'action
     menu.removeEventListener("mouseleave", handleMouseLeave);
   }
-}
+};
 
 // Toggle de la classe 'active' pour le burger
 burger.addEventListener("click", () => {
-  if (!burger.classList.contains("active")) {
-    burger.classList.add("active");
-    menu.classList.add("open");
-  } else {
-    burger.classList.remove("active");
-    menu.classList.remove("open");
-  }
+  burger.classList.toggle("active");
+  menu.classList.toggle("open");
 });
 
 // Fonction pour gérer les éléments cliquables du menu
-function toggleElement(element, target) {
+const toggleElement = (element, target) => {
   element.addEventListener("click", () => {
-    if (!target.classList.contains("open")) {
-      target.classList.add("open");
-    } else {
-      target.classList.remove("open");
-    }
+    target.classList.toggle("open");
   });
-}
+};
 
 const elements = [
   {
@@ -69,28 +63,20 @@ const logo = document.querySelector(".LOGO");
 const vit = document.querySelector(".vit");
 const anim = document.querySelectorAll(".anim");
 
-console.log("Logo:", logo);
-console.log("Vit:", vit);
-console.log("Anim:", anim);
-
 window.addEventListener("DOMContentLoaded", () =>
   createGSAPTimeline(logo, vit, anim)
 );
 
 // Fonction pour créer une timeline GSAP
-function createGSAPTimeline(logo, vit, anim) {
+const createGSAPTimeline = (logo, vit, anim) => {
   // Création d'une timeline GSAP avec pause initiale
   const TL = gsap.timeline({ paused: true });
 
-  // Vérifie si 'vit' existe avant d'ajouter l'animation
-  if (vit) {
-    // Animation de défilement depuis le haut pour les éléments 'vit'
-    TL.staggerFrom(vit, 1, { top: -100, ease: "power2.out" }, 0.3);
-  }
+  // Vérifie si 'vit' existe avant d'ajouter l'animation de défilement depuis le haut
+  if (vit) TL.staggerFrom(vit, 1, { top: -100, ease: "power2.out" }, 0.3);
 
-  // Vérifie si 'logo' existe avant d'ajouter l'animation
-  if (logo) {
-    // Animation de défilement depuis le haut pour les éléments 'logo'
+  // Même vérification pour le logo
+  if (logo)
     TL.staggerFrom(
       logo,
       1,
@@ -98,17 +84,14 @@ function createGSAPTimeline(logo, vit, anim) {
       0.3,
       "-=0.8"
     );
-  }
 
-  // Vérifie si au moins un élément 'anim' existe avant d'ajouter l'animation
-  if (anim.length > 0) {
-    // Animation de fondu pour les éléments 'anim' avec un délai
+  // Vérifie si au moins un élément 'anim' existe avant d'ajouter l'animation de fondu avec un délai
+  if (anim.length > 0)
     TL.staggerFrom(anim, 3, { opacity: 0, ease: "power2.out" }, 0.3, "-=0.2");
-  }
 
   // Lecture automatique de la timeline
   TL.play();
-}
+};
 
 // Bouton coeur page Sélection
 const coeur = document.querySelector("#coeur");
@@ -135,22 +118,18 @@ const slideImages = [
 let currentSlideIndex = 0;
 
 // Fonction pour changer le slide
-function changeSlide(sens) {
+const changeSlide = (sens) => {
   currentSlideIndex += sens;
 
   // Boucle vers le dernier slide si on va au-delà du premier
-  if (currentSlideIndex < 0) {
-    currentSlideIndex = slideImages.length - 1;
-  }
+  if (currentSlideIndex < 0) currentSlideIndex = slideImages.length - 1;
 
   // Boucle vers le premier slide si on va au-delà du dernier
-  if (currentSlideIndex >= slideImages.length) {
-    currentSlideIndex = 0;
-  }
+  if (currentSlideIndex >= slideImages.length) currentSlideIndex = 0;
 
   // Met à jour l'attribut source de l'élément 'slide' avec la nouvelle image
   slideImage.src = slideImages[currentSlideIndex];
-}
+};
 
 // Ajout d'une condition pour éviter message d'erreur 'Cannot read properties of null '
 if (precedentBtn && suivantBtn) {
