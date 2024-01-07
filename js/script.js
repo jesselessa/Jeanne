@@ -68,6 +68,11 @@ elements.forEach((item) => toggleElement(item.element, item.target));
 const logo = document.querySelector(".LOGO");
 const vit = document.querySelector(".vit");
 const anim = document.querySelectorAll(".anim");
+
+console.log("Logo:", logo);
+console.log("Vit:", vit);
+console.log("Anim:", anim);
+
 window.addEventListener("DOMContentLoaded", () =>
   createGSAPTimeline(logo, vit, anim)
 );
@@ -77,20 +82,29 @@ function createGSAPTimeline(logo, vit, anim) {
   // Création d'une timeline GSAP avec pause initiale
   const TL = gsap.timeline({ paused: true });
 
-  // Animation de défilement depuis le haut pour les éléments 'vit'
-  TL.staggerFrom(vit, 1, { top: -100, ease: "power2.out" }, 0.3);
+  // Vérifie si 'vit' existe avant d'ajouter l'animation
+  if (vit) {
+    // Animation de défilement depuis le haut pour les éléments 'vit'
+    TL.staggerFrom(vit, 1, { top: -100, ease: "power2.out" }, 0.3);
+  }
 
-  // Animation de défilement depuis le haut pour les éléments 'vit'
-  TL.staggerFrom(
-    logo,
-    1,
-    { top: -50, opacity: 0, ease: "power2.out" },
-    0.3,
-    "-=0.8"
-  );
+  // Vérifie si 'logo' existe avant d'ajouter l'animation
+  if (logo) {
+    // Animation de défilement depuis le haut pour les éléments 'logo'
+    TL.staggerFrom(
+      logo,
+      1,
+      { top: -50, opacity: 0, ease: "power2.out" },
+      0.3,
+      "-=0.8"
+    );
+  }
 
-  // Animation de fondu pour les éléments 'anim' avec un délai
-  TL.staggerFrom(anim, 3, { opacity: 0, ease: "power2.out" }, 0.3, "-=0.2");
+  // Vérifie si au moins un élément 'anim' existe avant d'ajouter l'animation
+  if (anim.length > 0) {
+    // Animation de fondu pour les éléments 'anim' avec un délai
+    TL.staggerFrom(anim, 3, { opacity: 0, ease: "power2.out" }, 0.3, "-=0.2");
+  }
 
   // Lecture automatique de la timeline
   TL.play();
