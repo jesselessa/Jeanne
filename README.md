@@ -1,6 +1,6 @@
 # jeanne
 
-Welcome to Jeanne Paris, a website for a fictive brand showcasing a collection of stylish clothing and accessories.
+This project is a website designed for Jeanne Paris, a fictive brand showcasing a collection of stylish clothing and accessories.
 
 ## Table of Contents
 
@@ -33,7 +33,7 @@ This project has been created with HTML, CSS and JavaScript.
 
 ## Pages
 
-The website features a responsive design, dynamic interactions, and a visually appealing layout.
+The website features a **responsive design**, **dynamic interactions** and a **visually appealing layout**.
 
 ### 1. Home (index.html)
 
@@ -63,7 +63,7 @@ Page displaying a thank you message and order reference after a successful purch
 
 1. Clone the repository : `git clone https://github.com/jesselessa/jeanne.git`
 2. Navigate to the project directory : `cd jeanne`
-3. Open the `index.html` file in your preferred browser, in order to explore the main landing page.
+3. Open the `index.html` file in your browser, in order to explore the main landing page.
 4. Check out other HTML files such as `collection.html`, `selection.html`, `panier.html`, `paiement.html` and `confirmation.html`, in order to navigate through different sections of the website.
 
 ## Contributing
