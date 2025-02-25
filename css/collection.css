@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Caslon";
-  src: url(./fonts/Libre_Caslon_Text/LibreCaslonText-Regular.ttf);
+  src: url(../fonts/Libre_Caslon_Text/LibreCaslonText-Regular.ttf);
   font-display: swap;
 }
 
@@ -86,7 +86,7 @@ header .picto {
 
 .header-right input:hover {
   border-bottom: 2px solid black;
-  background: url(./images/Vector.png) no-repeat 95%;
+  background: url(../images/Vector.png) no-repeat 95%;
 }
 
 /*----------- MENU DEROULANT --------*/

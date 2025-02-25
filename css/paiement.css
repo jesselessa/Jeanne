@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Caslon";
-  src: url(./fonts/Libre_Caslon_Text/LibreCaslonText-Regular.ttf);
+  src: url(../fonts/Libre_Caslon_Text/LibreCaslonText-Regular.ttf);
   font-display: swap;
 }
 
@@ -91,10 +91,10 @@ header .picto {
 
 .header-right input:hover {
   border-bottom: 2px solid black;
-  background: url(./images/Vector.png) no-repeat 95%;
+  background: url(../images/Vector.png) no-repeat 95%;
 }
 
-/*------------------ MENU DEROULANT -------------------*/
+/*--------------------- MENU DEROULANT---------------------*/
 #topnav_menu {
   display: block;
   position: absolute;
@@ -114,7 +114,6 @@ header .picto {
 .grande-categorie-wrapper {
   max-height: calc(100vh - 90px);
   overflow-y: auto;
-  /* ! */
 }
 
 #topnav_menu .grande-categorie {
@@ -158,10 +157,11 @@ header .picto {
   -webkit-user-select: none;
 }
 
-/*--------------- HEADER RESPONSIVE -----------------*/
+/*-------- RESPONSIVE HEADER ----------*/
 .pc {
   display: block;
 }
+
 .mob {
   display: none;
 }
@@ -262,7 +262,6 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 30px;
 }
 
 footer .bloc {
@@ -307,7 +306,6 @@ footer li a:hover {
 
 footer .picto img {
   height: 30px;
-  margin: 15px;
 }
 
 footer .picto {
@@ -331,102 +329,162 @@ footer a {
   }
 }
 
-/*------ RESTE DE LA PAGE PANIER ------*/
-.containerGrand {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: rgba(255, 255, 255, 0.85);
-  height: auto;
-  max-width: 100%;
-}
-
-/*----------------- S1 -------------------*/
-.s1 {
+/*------ RESTE DE LA PAGE PAIEMENT ------*/
+/** CONTAINER PRINCIPAL */
+.container {
+  min-height: calc(100vh - 90px);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 87vh;
-  max-width: 50vw;
-}
-.s1 .haut h1 {
-  font-size: 25px;
-}
-
-.haut {
-  display: flex;
-  margin: 0px;
-  justify-content: space-evenly;
-  align-items: center;
-  border: #efbb7e;
-  background: #efbb7e;
-  min-height: 52px;
-}
-
-.s1 .div1 img {
-  height: 350px;
-  width: 280px;
-}
-
-ul {
-  font-size: 16px;
-  list-style: none;
-  padding: 20px;
-}
-
-.div1 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   font-size: 20px;
   padding: 20px;
-  gap: 20px;
+  line-height: 1.4;
   max-width: 100%;
 }
 
-.contenu {
+.s1,
+.s2 {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  line-height: 1.6;
+  width: 50%;
+  min-height: 100%;
+  padding: 10px;
 }
 
-.contenu h2 {
-  align-items: center;
-  font-size: 25px;
-  padding: 35px;
+.s2 {
+  overflow-y: auto;
+}
+
+.s2 h3 {
+  font-size: 22px;
+  color: #b17f4a;
+  margin-bottom: 20px;
+}
+
+input {
+  font-size: 18px;
+  text-align: center;
+}
+
+/** SECTION 1 */
+.s1 {
+  border-right: 1px solid #efbb7e;
+}
+
+.etapes-paiement {
+  display: flex;
+  font-size: 22px;
+  gap: 10px;
+}
+
+.etapes-paiement .payer {
+  font-weight: bolder;
   color: #b17f4a;
 }
 
-.contenu ul li {
-  border-bottom: 1px dashed black;
-  margin-bottom: 10px;
+.etapes-paiement span {
+  font-weight: bolder;
+  font-size: 20px;
 }
 
-/*------------------- S2 -------------------*/
-.s2 {
-  max-width: 50vw;
+.retour-panier {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.retour-panier a {
+  color: black;
+  font-weight: bold;
+}
+
+.attention {
+  font-size: 20px;
+}
+
+.adf {
+  margin-top: 15px;
+}
+
+/* Adresses de facturation et livraison */
+.s1 form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border-left: #efbb7e 1px solid;
-  min-height: 87vh;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
-.s2 h1 {
-  font-size: 25px;
+label {
+  color: #b17f4a;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.livraison {
-  height: auto;
+.s1 form input {
+  width: 495px;
+}
+
+.nom,
+.email,
+.telephone,
+.adresse,
+.pay {
+  height: 51px;
+}
+
+.btn-form button {
+  width: 130px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Caslon";
+  background: #efbb7e;
+  border: 15px;
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-form button:hover {
+  cursor: pointer;
+  box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-form {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  line-height: 1.6;
-  padding: 20px;
   gap: 20px;
 }
 
-.mode-livraison,
+/** SECTION 2 */
+/* Résumé commande et infos paiement */
+.resume-commande,
+.infos-paiement {
+  min-height: 50%;
+}
+
+.resume-commande {
+  font-size: 22px;
+  line-height: 2.5;
+  padding-bottom: 30px;
+}
+
+.infos-paiement {
+  padding-bottom: 10px;
+}
+
+.retour-panier {
+  margin-bottom: 20px;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.article,
+.numero,
+.frais-livraison,
 .total {
   display: flex;
   justify-content: space-between;
@@ -434,163 +492,204 @@ ul {
   border-bottom: 1px dashed black;
 }
 
-.total h1 {
-  font-size: 20px;
-}
-
-form {
-  min-height: 40px;
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
-}
-
-input {
-  font-size: 16px;
-  padding: 5px;
-  outline: none;
-}
-
-.btn {
+.frais-livraison {
   margin-bottom: 20px;
 }
 
-.btn,
-.btn-1,
-.btn-2 {
-  border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: black;
-  font-weight: normal;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.btn,
-.btn-2 {
-  background: #f3ede3;
-}
-
-.btn-1 {
-  background: #efbb7e;
-}
-
-.btn-2 {
-  padding: 5px 15px;
-}
-
-.btn:hover,
-.btn-1:hover,
-.btn-2:hover {
-  box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.25);
-}
-
-.paye2 {
-  height: auto;
-  margin-bottom: 20px;
-}
-.paye2 h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #b17f4a;
-}
-
-.cb img {
-  width: 40%;
-  margin-top: 20px;
-}
-
-.cb {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.paye1 {
-  height: 51px;
-  width: 250px;
-  font-family: "Caslon";
-  font-weight: bold;
-  font-size: 20px;
-  color: black;
-  background-color: #efbb7e;
-  padding: 5px 30px;
-  border: none;
-  margin-bottom: 30px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-}
-
-.paye1:hover {
-  box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.25);
-}
-
-.s2 .lien-paiement {
-  align-self: center;
-  color: black;
-}
-
-.bas {
-  min-height: 12vh;
+/* Box CB */
+.box-cb {
+  max-width: 560px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #efbb7e;
-  border: #efbb7e;
-  padding: 10px;
+  background-color: rgb(254, 211, 158);
+  border-radius: 10px;
+  margin: 0 auto;
+  color: black;
+  padding: 15px;
+  gap: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/*************** Media Queries ****************/
-@media screen and (max-width: 1000px) {
-  .containerGrand {
-    grid-template-columns: 1fr;
-  }
-  .s1,
-  .s2 {
-    max-width: 100vw;
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paypal {
+  width: 11%;
+}
+
+.all-cards-img {
+  width: 30%;
+}
+
+small {
+  margin: 5px 0;
+  font-style: italic;
+}
+
+.box-cb label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.box-cb input {
+  font-size: 20px;
+  text-align: left;
+  padding-left: 5px;
+}
+.card-holder input,
+.card-number input {
+  width: 100%;
+}
+
+.card-expiration input,
+.card-security input {
+  min-width: 20%;
+}
+
+.card-expiration {
+  float: left;
+}
+
+.card-security {
+  float: right;
+  position: relative;
+}
+
+/* Encadré en commentaire au survol de .tooltip */
+.help {
+  display: none;
+  max-width: 175px;
+  position: absolute;
+  bottom: -6em;
+  right: 30px;
+  font-size: 0.85em;
+  background: #f3ede3;
+  border-radius: 3px;
+  border-bottom: 3px solid #efbb7e;
+  padding: 10px;
+  z-index: 100;
+}
+
+/* Petite flèche de .help */
+.help:before {
+  position: absolute;
+  content: " ";
+  display: inline-block;
+  border-bottom: 10px solid #efbb7e;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  top: -10px;
+  left: 15px;
+}
+
+.tooltip:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tooltip:hover ~ .help {
+  display: inline-block;
+}
+
+.pay {
+  display: inline-block;
+  width: 60%;
+  background: #efbb7e;
+  font-size: 20px;
+  font-family: "Caslon";
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin: auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.5s background;
+}
+
+.pay:hover {
+  background-color: #f3ede3;
+  cursor: pointer;
+  box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+/************* Media Queries *************/
+@media screen and (max-width: 1100px) {
+  .container {
+    flex-direction: column;
   }
   .s1 {
-    margin-bottom: 30px;
+    border-right: none;
   }
-  .s2 {
-    border-left: none;
-  }
-  .div1 {
-    flex-direction: column;
-    align-items: center;
-  }
-  .contenu {
-    width: 100vw;
-  }
-  .contenu h2 {
-    text-align: center;
-  }
-  .contenu h2,
-  .contenu ul {
+  .s1,
+  .s2,
+  .etapes-paiement,
+  .s1 form input,
+  .box-cb,
+  .numero {
     width: 100%;
   }
-  .livraison {
-    padding: 10px;
+  .etapes-paiement,
+  .etapes-paiement span {
+    font-size: 12px;
   }
-  form {
+  .box-recap {
+    font-size: 20px;
+  }
+  .numero {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
   }
-  .btn-2 {
-    margin-bottom: 30px;
+  .total {
+    line-height: 1.3;
+    font-size: 21px;
+  }
+  .tva {
+    width: 60%;
+  }
+  .prix {
+    width: 40%;
+    text-align: right;
+  }
+  .resume-commande h3 {
+    line-height: 1.2;
   }
 }
 
 @media screen and (max-width: 500px) {
-  input {
-    width: 70%;
+  .btn-form {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 30px 0;
+  }
+  .btn-form button {
+    width: 60vw;
+    color: black;
+    margin-bottom: 15px;
+  }
+  .s2 h3 {
     text-align: center;
   }
-  .bas {
-    text-align: center;
+  .box-cb label {
+    font-size: 16px;
+  }
+  .box-cb input {
+    font-size: 16px;
+  }
+  .tooltip {
+    font-size: 16px;
+  }
+  .pay {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pay {
+    font-size: 18px;
   }
 }

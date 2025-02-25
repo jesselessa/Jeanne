@@ -1,6 +1,6 @@
 # jeanne
 
-This project is a website designed for Jeanne Paris, a fictive brand showcasing a collection of stylish clothing and accessories.
+This project is a website designed for Jeanne Paris, a brand showcasing a collection of stylish clothing and accessories.
 
 ## Table of Contents
 

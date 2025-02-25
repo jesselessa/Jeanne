@@ -108,10 +108,10 @@ const suivantBtn = document.querySelector("#suivant");
 
 // Tableau contenant les chemins des différentes images du slide
 const slideImages = [
-  "./images/selection/responsive/vue1-1000px.jpg",
-  "./images/selection/responsive/vue2-1000px.jpg",
-  "./images/selection/responsive/vue3-1000px.jpg",
-  "./images/selection/responsive/vue4-1000px.jpg",
+  "../images/selection/responsive/vue1-1000px.jpg",
+  "../images/selection/responsive/vue2-1000px.jpg",
+  "../images/selection/responsive/vue3-1000px.jpg",
+  "../images/selection/responsive/vue4-1000px.jpg",
 ];
 
 // Variable stockant l'index actuel du slide
