@@ -329,10 +329,10 @@ footer a {
 }
 
 /*------ DEBUT DE LA PAGE D'ACCUEIL ------*/
-/* main {
+main {
   display: flex;
   flex-direction: column;
-} */
+}
 main h2 {
   font-size: clamp(30px, 4vw, 40px);
 }
